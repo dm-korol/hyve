@@ -22,6 +22,14 @@ jobs:
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}." 
       - run: pwd
+    
+      - name: cleanup
+        uses: garygrossgarten/github-action-ssh@release
+        with:
+          command: cd /var/hyve-fe; rm -rf ./workspace 
+          host: ${{ secrets.DO_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          privateKey: ${{ secrets.SSH_KEY }}
                    
       - name: Deploy to server 
         if: ${{ github.event.inputs.deploy == 'yes' }}
