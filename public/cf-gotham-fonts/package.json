@@ -1,0 +1,17 @@
+{
+  "name": "cf-gotham-fonts",
+  "version": "1.0.0",
+  "description": "Custom Gotham Font Package includes condensed and htf",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gotham",
+    "cf",
+    "fonts",
+    "condensed"
+  ],
+  "author": "Daniel Wood",
+  "license": "ISC"
+}

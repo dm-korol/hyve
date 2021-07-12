@@ -1,0 +1,37 @@
+/** Book **/
+@font-face {
+  font-family: 'GothamHTF';
+  src: url('book/normal/GothamHTF-Book.eot');
+  src: url('book/normal/GothamHTF-Book.woff2') format('woff2'),
+    url('book/normal/GothamHTF-Book.woff') format('woff'),
+    url('book/normal/GothamHTF-Book.ttf') format('truetype'),
+    url('book/normal/GothamHTF-Book.svg#GothamHTF-Book') format('svg'),
+    url('book/normal/GothamHTF-Book.eot?#iefix') format('embedded-opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/** Medium **/
+@font-face {
+  font-family: 'GothamHTF';
+  src: url('medium/normal/GothamHTF-Medium.eot');
+  src: url('medium/normal/GothamHTF-Medium.woff2') format('woff2'),
+    url('medium/normal/GothamHTF-Medium.woff') format('woff'),
+    url('medium/normal/GothamHTF-Medium.ttf') format('truetype'),
+    url('medium/normal/GothamHTF-Medium.svg#GothamHTF-Medium') format('svg'),
+    url('medium/normal/GothamHTF-Medium.eot?#iefix') format('embedded-opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+/** Black **/
+@font-face {
+  font-family: 'GothamHTF';
+  src: url('black/normal/GothamHTF-Black.eot');
+  src: url('black/normal/GothamHTF-Black.woff2') format('woff2'),
+    url('black/normal/GothamHTF-Black.woff') format('woff'),
+    url('black/normal/GothamHTF-Black.ttf') format('truetype'),
+    url('black/normal/GothamHTF-Black.svg#GothamHTF-Black') format('svg'),
+    url('black/normal/GothamHTF-Black.eot?#iefix') format('embedded-opentype');
+  font-weight: 700;
+  font-style: normal;
+}

@@ -1,0 +1,119 @@
+{
+  "name": "hyve-fe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "format": "prettier --write",
+    "lint": "eslint \"pages/**/*{.ts,.tsx}\"",
+    "start": "next start",
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "hooks:pre-commit": "yarn run lint && lint-staged",
+    "hooks:pre-push": "yarn jest && yarn build",
+    "hooks:commit-msg": "commitlint --edit"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.4.0",
+    "@emotion/react": "^11.4.0",
+    "@emotion/server": "^11.4.0",
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "@reduxjs/toolkit": "^1.6.0",
+    "@types/react-table": "^7.7.1",
+    "antd": "^4.16.3",
+    "cf-gotham-fonts": "^1.0.0",
+    "clsx": "^1.1.1",
+    "emotion": "^11.0.0",
+    "ethers": "^5.3.1",
+    "formik": "^2.2.9",
+    "next": "10.2.3",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-dropzone": "^11.3.4",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "formik": "2.2.9",
+    "yup": "0.32.9"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.14.5",
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "@jest/globals": "^27.0.3",
+    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-controls": "^6.2.9",
+    "@storybook/addon-docs": "^6.2.9",
+    "@storybook/addon-essentials": "^6.2.9",
+    "@storybook/addon-links": "^6.2.9",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-viewport": "^6.2.9",
+    "storybook-addon-next-router": "^2.0.4",
+    "@storybook/preset-scss": "^1.0.3",
+    "@storybook/react": "^6.2.9",
+    "@svgr/webpack": "^5.5.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/react": "^11.2.7",
+    "@types/jest": "^26.0.23",
+    "@typescript-eslint/eslint-plugin": "^4.26.1",
+    "@typescript-eslint/parser": "^4.26.1",
+    "babel-loader": "^8.2.2",
+    "babel-preset-react-app": "^10.0.0",
+    "eslint": "^7.28.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^12.3.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "2.23.4",
+    "eslint-plugin-jest": "24.3.6",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "eslint-webpack-plugin": "^2.5.4",
+    "husky": "^6.0.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.4",
+    "lint-staged": "^11.0.0",
+    "mrm": "^3.0.2",
+    "mrm-task-lint-staged": "^6.0.0",
+    "postcss": "^8.3.4",
+    "postcss-loader": "^6.1.0",
+    "prettier": "2.3.1",
+    "react-table": "^7.7.0",
+    "storybook-addon-material-ui": "^0.9.0-alpha.24",
+    "ts-jest": "^27.0.3",
+    "typescript": "^4.3.2"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "esmodules": true
+          }
+        }
+      ],
+      "@babel/preset-typescript",
+      "@babel/preset-react"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "moduleNameMapper": {
+      "\\.(scss|sass|css)$": "identity-obj-proxy"
+    },
+    "testEnvironment": "jsdom"
+  },
+  "lint-staged": {
+    "*.{js,json,css,md,ts,tsx,html,component.html}": [
+      "prettier --write"
+    ],
+    "*.js": "eslint --cache --fix"
+  }
+}
