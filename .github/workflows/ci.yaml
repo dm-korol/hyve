@@ -38,7 +38,7 @@ jobs:
         uses: garygrossgarten/github-action-ssh@release
         with:
           command: cd /var/hyve-fe; pm2 stop  api ; pm2 start yarn --interpreter bash --name api -- start; 
-          host: ec2-52-47-95-181.eu-west-3.compute.amazonaws.com
+          host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.SSH_KEY }}
 
