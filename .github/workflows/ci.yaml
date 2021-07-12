@@ -26,9 +26,9 @@ jobs:
         if: ${{ github.event.inputs.deploy == 'yes' }}
         uses: nogsantos/scp-deploy@master
         with:
-          src: ./
+          src: .
           host: ${{ secrets.DO_HOST }}
-          remote: /var/hyve-fe
+          remote: /var/hyve-fe/
           port: 22
           user: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
