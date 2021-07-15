@@ -33,19 +33,19 @@ jobs:
                    
       - name: Deploy to server 
         if: ${{ github.event.inputs.deploy == 'yes' }}
-        uses: nogsantos/scp-deploy@master
+        uses: burnett01/rsync-deployments@4.1
         with:
-          src: ${{ github.workspace }}
-          host: ${{ secrets.DO_HOST }}
-          remote: /var/hyve-fe/
-          port: 22
-          user: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_KEY }}
-
+          switches: -avzr --delete
+          path: ${{ github.workspace }}
+          remote_path: /var/hyve-fe/
+          remote_host: ${{ secrets.DO_HOST }}
+          remote_user: ${{ secrets.SSH_USER }}
+          remote_key: ${{ secrets.SSH_KEY }}
+               
       - name: restart app
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /var/hyve-fe/workspace;yarn add next;yarn add --dev eslint-config-next; yarn build; pm2 delete api 2> /dev/null; pm2 start yarn --interpreter bash --name api -- dev; 
+          command: cd /var/hyve-fe/workspace; yarn add next ; pm2 delete api 2> /dev/null; pm2 start yarn --interpreter bash --name api -- dev; 
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.SSH_KEY }}
