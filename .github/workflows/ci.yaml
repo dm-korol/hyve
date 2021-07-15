@@ -26,7 +26,7 @@ jobs:
       - name: cleanup
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /var/hyve-fe; rm -rf hyve-fe; mkdir hyve-fe; 
+          command: cd /var/hyve-fe; sudo rm -rf hyve-fe; sudo mkdir hyve-fe; 
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.SSH_KEY }}
