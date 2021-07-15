@@ -26,7 +26,7 @@ jobs:
       - name: cleanup
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /var/hyve-fe; rm -rf ./workspace 
+          command: cd /var/hyve-fe; rm .* * 2>&- 
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.SSH_KEY }}
