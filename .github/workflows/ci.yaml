@@ -30,6 +30,14 @@ jobs:
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.SSH_KEY }}
+          
+      - name: build
+        uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: add next
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: build # will run `yarn build` command
                    
       - name: Deploy to server 
         if: ${{ github.event.inputs.deploy == 'yes' }}
