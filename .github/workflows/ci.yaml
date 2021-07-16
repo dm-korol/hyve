@@ -53,7 +53,7 @@ jobs:
       - name: restart app
         uses: garygrossgarten/github-action-ssh@release
         with:
-          command: cd /var/hyve-fe/; cp /home/ops/next.config.js /var/hyve-fe/ ; yarn add next; yarn build ; pm2 delete api 2> /dev/null; pm2 start yarn --interpreter bash --name api -- start; 
+          command: cd /var/hyve-fe/; pm2 delete api 2> /dev/null; pm2 start yarn --interpreter bash --name api -- start; 
           host: ${{ secrets.DO_HOST }}
           username: ${{ secrets.SSH_USER }}
           privateKey: ${{ secrets.SSH_KEY }}
